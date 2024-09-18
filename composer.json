@@ -1,5 +1,5 @@
 {
-    "name":"planetadeleste/ucfe",
+    "name":"plugowski/ucfe",
     "description":"PHP UCFE client",
     "minimum-stability":"stable",
     "license":"MIT",
@@ -8,14 +8,22 @@
         {
             "name":"Alvaro Canepa",
             "email":"bfpdevel@gmail.com"
+        },
+        {
+            "name":"Pawel Lugowski",
+            "email":"pawelugowski@gmail.com"
         }
     ],
     "require":{
-        "php":"~7.3",
+        "php":">=7.3",
         "ext-soap":"*",
         "ext-json":"*",
         "spatie/array-to-xml":"~2.15.0",
-        "illuminate/support": "~6.0"
+        "illuminate/support": "*"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
     },
     "autoload":{
         "psr-4":{
