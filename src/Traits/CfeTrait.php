@@ -2,6 +2,7 @@
 
 namespace PlanetaDelEste\Ucfe\Traits;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use PlanetaDelEste\GW\Classes\Helper\PriceHelper;
 use PlanetaDelEste\Ucfe\Cfe\CAEData;
@@ -197,7 +198,7 @@ trait CfeTrait
         }
 
         // Apply discounts over MntNoGrv
-        $arDiscounts = array_get($this->arExtraData, 'DscRcgGlobal.DRG_Item', []);
+        $arDiscounts = Arr::get($this->arExtraData, 'DscRcgGlobal.DRG_Item', []);
 
         if (!empty($arDiscounts)) {
             foreach ($arDiscounts as $arDiscountItem) {
@@ -303,7 +304,7 @@ trait CfeTrait
         }
 
         // Find and apply discounts
-        $arDiscounts = array_get($this->arExtraData, 'DscRcgGlobal.DRG_Item', []);
+        $arDiscounts = Arr::get($this->arExtraData, 'DscRcgGlobal.DRG_Item', []);
 
         if (!empty($arDiscounts)) {
             foreach ($arDiscounts as $arDiscountItem) {

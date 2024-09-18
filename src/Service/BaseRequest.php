@@ -3,6 +3,7 @@
 namespace PlanetaDelEste\Ucfe\Service;
 
 use Exception;
+use Illuminate\Support\Arr;
 use PlanetaDelEste\Ucfe\Client;
 
 abstract class BaseRequest extends Client
@@ -32,10 +33,10 @@ abstract class BaseRequest extends Client
         $sValue = is_array($arguments) && !empty($arguments) ? $arguments[0] : $arguments;
 
         if ((!empty($sValue) || is_bool($sValue) || is_numeric($sValue))) {
-            array_set($this->arData, $name, $sValue);
+            Arr::set($this->arData, $name, $sValue);
         }
 
-        return array_get($this->arData, $name);
+        return Arr::get($this->arData, $name);
     }
 
     /**

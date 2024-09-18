@@ -2,6 +2,7 @@
 
 namespace PlanetaDelEste\Ucfe\Service;
 
+use Illuminate\Support\Arr;
 use Spatie\ArrayToXml\ArrayToXml;
 
 /**
@@ -52,7 +53,7 @@ class StatusRequest extends BaseRequest
 
         if ($this->xml() && $this->xml() === true) {
             $obArray = new ArrayToXml(['DevolverXml' => 'true'], 'Consulta');
-            array_set($arData, 'CfeXmlOTexto', $obArray->dropXmlDeclaration()->toXml());
+            Arr::set($arData, 'CfeXmlOTexto', $obArray->dropXmlDeclaration()->toXml());
         }
 
         return $arData;

@@ -3,6 +3,7 @@
 namespace PlanetaDelEste\Ucfe\Traits;
 
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
@@ -59,7 +60,7 @@ trait HasAttributeTrait
      */
     public function getOriginalAttr(string $sKey, $default = null)
     {
-        return array_get($this->arAttributes, $sKey, $default);
+        return Arr::get($this->arAttributes, $sKey, $default);
     }
 
     /**
@@ -75,7 +76,7 @@ trait HasAttributeTrait
             $sValue = $this->castAttribute($sKey, $sValue);
         }
 
-        array_set($this->arAttributes, $sKey, $sValue);
+        Arr::set($this->arAttributes, $sKey, $sValue);
 
         if ($bWithoutMutate !== false || !$this->hasMutator($sKey)) {
             return;
