@@ -7,7 +7,7 @@ API PHP para consumir datos de servicios URUWARE (UCFE)
 ## Instalación
 
 ```bash
-composer require plugowski/ucfe
+composer require planetadeleste/ucfe
 ```
 
 ## Uso

@@ -1,5 +1,5 @@
 {
-    "name":"plugowski/ucfe",
+    "name":"planetadeleste/ucfe",
     "description":"PHP UCFE client",
     "minimum-stability":"stable",
     "license":"MIT",
@@ -20,10 +20,6 @@
         "ext-json":"*",
         "spatie/array-to-xml":"~2.15.0",
         "illuminate/support": "*"
-    }
-    ,
-    "require-dev": {
-        "roave/security-advisories": "dev-latest"
     },
     "autoload":{
         "psr-4":{
