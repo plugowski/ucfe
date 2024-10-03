@@ -4,6 +4,7 @@ namespace PlanetaDelEste\Ucfe\Traits;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Validation\ValidationException;
 use PlanetaDelEste\GW\Classes\Helper\PriceHelper;
 use PlanetaDelEste\Ucfe\Cfe\CAEData;
 use PlanetaDelEste\Ucfe\Cfe\Compl_Fiscal;
@@ -153,7 +154,7 @@ trait CfeTrait
         $obValidator = \Validator::make($this->arData, $this->getRules());
 
         if (!$obValidator->passes()) {
-            throw new \ValidationException($obValidator);
+            throw new ValidationException($obValidator);
         }
     }
 
